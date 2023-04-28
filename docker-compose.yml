@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  redmine:
+    build: redmine
+    ports:
+      - 8280:3000
+    environment:
+      REDMINE_PLUGINS_MIGRATE: "true"
+    volumes:
+      - ./redmine/saml-config.rb /usr/src/redmine/config/initializers/saml.rb
